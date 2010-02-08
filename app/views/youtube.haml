@@ -1,0 +1,6 @@
+= javascript_include_tag "jquery-1.4.min.js"
+= stylesheet_link_tag "site", :media => :screen, :charset => 'utf-8'
+
+%h1 YouTube 保管庫
+
+= partial :videos, :videos=>Video.all

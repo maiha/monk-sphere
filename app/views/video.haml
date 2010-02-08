@@ -1,0 +1,36 @@
+// locals: video
+= stylesheet_link_tag "site", :media => :screen, :charset => 'utf-8'
+
+%h1=h video.title
+
+%table.simple
+  %thead
+    %tr
+      %th VideoID
+      %td=h video.code
+    %tr
+      %th タイトル
+      %td=h video.title
+    %tr
+      %th DL状態
+      %td= video_state(video)
+    %tr
+      %th ファイル
+      %td
+        - if video.fetched?
+          - path = "/videos/YouTube/#{video.code}/video.flv"
+          = link_to path, path
+          == (#{video.path.size}bytes)
+    %tr
+      %th 時間
+      %td== #{video.duration}秒
+    %tr
+      %th 詳細
+      %td=h video.description
+    %tr
+      %th タグ
+      %td=h video_keywords(video)
+    %tr
+      %th 登録日
+      %td= video.date
+

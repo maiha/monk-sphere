@@ -1,0 +1,8 @@
+dsl_accessor >= 0.4
+dependencies >= 0.0.8
+haml >= 2.2.0
+monk-glue >= 0.0.1
+ohm >= 0.0.32
+ohm-arfreaks >= 0.0.1
+rack >= 1.0
+sinatra >= 0.9.4
