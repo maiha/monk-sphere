@@ -27,10 +27,10 @@ class Monk < Thor
   end
 
   desc "start ENV", "Start Monk in the supplied environment"
+  method_option :port
   def start(env = ENV["RACK_ENV"] || "development")
     verify_config(env)
-
-    exec "env RACK_ENV=#{env} ruby init.rb"
+    exec "env RACK_ENV=#{env} RACK_PORT=#{options[:port]} ruby init.rb"
   end
 
   desc "console ENV", "Start Monk console in the supplied environment"
